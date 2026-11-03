@@ -52,337 +52,727 @@ Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
 
-Index.html
+index.html
 
 ```
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>Bluebell Boutique | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaCart</title>
-    <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5EBDD;
+            color: #263445;
+        }
+
+        /* Header */
+        header {
+            background-color: #142D4E;
+            color: #FFF9F1;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo h1 {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            font-size: 28px;
+        }
+
+        .logo p {
+            color: #D8C3A5;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            background-color: #0B1F35;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #FFF9F1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #D8C3A5;
+        }
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            padding: 18px;
+            background-color: #F5EBDD;
+        }
+
+        .search-container form {
+            display: flex;
+            width: 90%;
+            max-width: 520px;
+        }
+
+        .search-container input {
+            flex: 1;
+            min-width: 0;
+            padding: 12px 15px;
+            border: 1px solid #C7B69D;
+            border-radius: 25px 0 0 25px;
+            font-size: 14px;
+        }
+
+        .search-container button {
+            background-color: #142D4E;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #E6D7C3;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 45px 7%;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .hero-text h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            color: #142D4E;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .hero-text a {
+            display: inline-block;
+            background-color: #142D4E;
+            color: #FFF9F1;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .hero-text a:hover {
+            background-color: #0B1F35;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 420px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Section Headings */
+        .section-heading {
+            text-align: center;
+            padding: 35px 15px 10px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            color: #142D4E;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: #6B6258;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 25px 7% 40px;
+        }
+
+        .category-card {
+            background-color: #FFF9F1;
+            width: 200px;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px #142D4E15;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .category-card h3 {
+            color: #142D4E;
+            margin-top: 12px;
+        }
+
+        /* Featured Products */
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            padding: 25px 7% 45px;
+        }
+
+        .product-card {
+            background-color: #FFF9F1;
+            width: 230px;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 14px #142D4E18;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 175px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 13px;
+        }
+
+        .product-card h3 {
+            color: #142D4E;
+            margin-bottom: 8px;
+        }
+
+        .product-card p {
+            margin-bottom: 14px;
+            color: #6B6258;
+        }
+
+        .product-card button {
+            background-color: #142D4E;
+            color: #FFF9F1;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 22px;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        .product-card button:hover {
+            background-color: #0B1F35;
+        }
+
+        /* Promotion Banner */
+        .promotion {
+            background-color: #142D4E;
+            color: #FFF9F1;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        .promotion h2 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .promotion p {
+            color: #E6D7C3;
+            margin-bottom: 18px;
+        }
+
+        .promotion a {
+            display: inline-block;
+            background-color: #E6D7C3;
+            color: #142D4E;
+            text-decoration: none;
+            padding: 11px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0B1F35;
+            color: #F5EBDD;
+            padding: 25px 15px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #D8C3A5;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 30px;
+            }
+
+            .hero-image img {
+                height: 230px;
+            }
+
+            .categories,
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .category-card,
+            .product-card {
+                width: 90%;
+                max-width: 320px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">NovaCart</div>
-
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Deals</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Header -->
+    <header id="home">
+        <div class="logo">
+            <h1>BLUEBELL BOUTIQUE</h1>
+            <p>Timeless pieces. Everyday elegance.</p>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form action="products.html" method="get">
+            <input type="search"
+                   name="search"
+                   placeholder="Search for your favorite products..."
+                   aria-label="Search products">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Hero Section -->
     <section class="hero">
-
         <div class="hero-text">
-            <h1>Discover Tech That<br>Defines Your Lifestyle</h1>
-
+            <h2>Discover Your Everyday Style</h2>
             <p>
-                Explore premium gadgets, accessories, and smart devices 
-                curated for modern living.
+                Explore thoughtfully selected fashion accessories
+                that bring elegance and comfort to your everyday look.
             </p>
-
-            <div class="hero-buttons">
-                <button class="primary-btn">Shop Now</button>
-                <button class="secondary-btn">View Deals</button>
-            </div>
+            <a href="products.html">Shop Collection</a>
         </div>
 
         <div class="hero-image">
-            <img src="Screenshot 2026-10-30 100655.png" alt="Premium Gadget Showcase">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"
+                 alt="Fashion collection">
         </div>
-
     </section>
 
-    <!-- PRODUCTS -->
-    <section class="products">
-        <h2>Trending Products</h2>
+    <!-- Categories -->
+    <section>
+        <div class="section-heading">
+            <h2>Shop by Category</h2>
+            <p>Find the perfect pieces for your style.</p>
+        </div>
 
-        <div class="product-container">
-
-            <div class="product-card">
-                <img src="Screenshot 2026-10-30 100819.png" alt="Wireless Headphones">
-                <h3>Wireless Headphones</h3>
-                <p>₹1,499</p>
-                <button>Buy Now</button>
+        <div class="categories">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"
+                     alt="Handbags">
+                <h3>Handbags</h3>
             </div>
 
-            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
+                     alt="Shoes">
+                <h3>Footwear</h3>
+            </div>
 
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+                     alt="Watches">
+                <h3>Watches</h3>
+            </div>
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
+                     alt="Sunglasses">
+                <h3>Sunglasses</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured">
+        <div class="section-heading">
+            <h2>Featured Products</h2>
+            <p>Our stylish picks for you.</p>
+        </div>
+
+        <div class="products">
             <div class="product-card">
-                <img src="Screenshot 2026-10-30 101026.png" alt="Gaming Mouse">
-                <h3>Gaming Mouse</h3>
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"
+                     alt="Classic Handbag">
+                <h3>Classic Handbag</h3>
                 <p>₹999</p>
-                <button>Buy Now</button>
+                <button type="button">Shop Now</button>
             </div>
 
             <div class="product-card">
-                <img src="Screenshot 2026-10-30 101112.png" alt="Bluetooth Speaker">
-                <h3>Bluetooth Speaker</h3>
-                <p>₹3,999</p>
-                <button>Buy Now</button>
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
+                     alt="Casual Shoes">
+                <h3>Casual Shoes</h3>
+                <p>₹1,499</p>
+                <button type="button">Shop Now</button>
             </div>
 
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+                     alt="Elegant Watch">
+                <h3>Elegant Watch</h3>
+                <p>₹1,299</p>
+                <button type="button">Shop Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
+                     alt="Fashion Sunglasses">
+                <h3>Fashion Sunglasses</h3>
+                <p>₹599</p>
+                <button type="button">Shop Now</button>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 NovaCart. Crafted with Flexbox.</p>
+    <!-- Promotional Banner -->
+    <section class="promotion" id="offers">
+        <h2>A Little Something Special</h2>
+        <p>Enjoy up to 20% off on selected boutique favorites.</p>
+        <a href="offers.html">Explore Offers</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p><b>BLUEBELL BOUTIQUE</b></p>
+        <p>Timeless pieces. Everyday elegance.</p>
+        <p>
+            <a href="products.html">Products</a> |
+            <a href="offers.html">Offers</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+        <p>Contact: bluebellboutique@example.com</p>
+        <p>© 2026 Bluebell Boutique. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-```
 
 
-Style.css
 
 ```
 
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+style.css
+
+```
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    background:#0f172a;
-    color:white;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5EBDD;
+    color: #2D2D2D;
 }
 
-/* NAVBAR */
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:rgba(15,23,42,0.95);
-    position:sticky;
-    top:0;
-    z-index:100;
+header {
+    background-color: #142D4E;
+    color: #FFF9F1;
+    text-align: center;
+    padding: 25px;
 }
 
-.logo{
-    font-size:1.8rem;
-    font-weight:700;
-    color:#38bdf8;
+header h1 {
+    margin-bottom: 8px;
+    letter-spacing: 2px;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    background-color: #0B1F35;
+    padding: 15px;
 }
 
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
+nav a {
+    color: #F5EBDD;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.nav-links a:hover{
-    color:#38bdf8;
+nav a:hover {
+    color: #D8C3A5;
 }
 
-/* HERO */
-.hero{
-    min-height:90vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:60px 8%;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    gap:50px;
-    flex-wrap:wrap;
+.banner {
+    background-color: #FFF9F1;
+    text-align: center;
+    padding: 35px 15px;
 }
 
-.hero-text{
-    flex:1;
-    min-width:300px;
+.banner h2 {
+    color: #142D4E;
+    margin-bottom: 10px;
 }
 
-.hero-text h1{
-    font-size:4rem;
-    line-height:1.2;
-    margin-bottom:20px;
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px;
 }
 
-.hero-text p{
-    font-size:1.15rem;
-    color:#cbd5e1;
-    margin-bottom:30px;
-    max-width:500px;
+.product-card {
+    background-color: #FFF9F1;
+    border: 1px solid #D8C3A5;
+    border-radius: 10px;
+    width: 220px;
+    padding: 15px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.hero-buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
 }
 
-.primary-btn,
-.secondary-btn{
-    padding:14px 30px;
-    border:none;
-    border-radius:30px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
+.product-card h3 {
+    color: #142D4E;
+    margin-bottom: 8px;
 }
 
-.primary-btn{
-    background:#38bdf8;
-    color:#0f172a;
+.product-card p {
+    margin-bottom: 15px;
 }
 
-.secondary-btn{
-    background:transparent;
-    border:2px solid #38bdf8;
-    color:#38bdf8;
+.product-card button {
+    background-color: #142D4E;
+    color: #F5EBDD;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
 }
 
-.primary-btn:hover,
-.secondary-btn:hover{
-    transform:translateY(-3px);
+.product-card button:hover {
+    background-color: #0B1F35;
 }
 
-.hero-image{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    min-width:300px;
+.content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #FFF9F1;
+    border: 1px solid #D8C3A5;
+    border-radius: 10px;
 }
 
-.hero-image img{
-    width:100%;
-    max-width:500px;
-    filter:drop-shadow(0 20px 30px rgba(56,189,248,0.25));
+.content h2 {
+    color: #142D4E;
+    margin-bottom: 15px;
 }
 
-/* PRODUCTS */
-.products{
-    padding:80px 8%;
-    text-align:center;
+.content p {
+    line-height: 1.6;
+    margin-bottom: 12px;
 }
 
-.products h2{
-    font-size:2.5rem;
-    margin-bottom:40px;
+.offer-box {
+    background-color: #D8C3A5;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
 }
 
-.product-container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
+.offer-box h3 {
+    color: #142D4E;
+    margin-bottom: 8px;
 }
 
-.product-card{
-    background:#1e293b;
-    width:260px;
-    padding:20px;
-    border-radius:20px;
-    transition:0.3s;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+.contact-info {
+    text-align: center;
 }
 
-.product-card:hover{
-    transform:translateY(-10px);
+.contact-info a {
+    color: #142D4E;
+    font-weight: bold;
 }
 
-.product-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:15px;
-    margin-bottom:15px;
+footer {
+    background-color: #0B1F35;
+    color: #F5EBDD;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-.product-card h3{
-    margin-bottom:10px;
-}
-
-.product-card p{
-    color:#38bdf8;
-    margin-bottom:15px;
-    font-weight:600;
-}
-
-.product-card button{
-    padding:10px 20px;
-    border:none;
-    border-radius:25px;
-    background:#38bdf8;
-    color:#0f172a;
-    cursor:pointer;
-    font-weight:600;
-}
-
-/* FOOTER */
-footer{
-    background:#020617;
-    text-align:center;
-    padding:20px;
-    color:#94a3b8;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-
-    .navbar{
-        flex-direction:column;
-        gap:15px;
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
-    .nav-links{
-        flex-direction:column;
-        align-items:center;
+    .products {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .hero{
-        flex-direction:column;
-        text-align:center;
-        padding-top:40px;
+    .product-card {
+        width: 90%;
+        max-width: 300px;
     }
 
-    .hero-text h1{
-        font-size:2.5rem;
-    }
-
-    .hero-text p{
-        margin:auto auto 30px;
-    }
-
-    .hero-buttons{
-        justify-content:center;
+    .content {
+        margin: 20px;
     }
 }
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #F5EBDD;
+}
+
+.search-container form {
+    display: flex;
+    width: 90%;
+    max-width: 500px;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #142D4E;
+    border-radius: 6px 0 0 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-container button {
+    background-color: #142D4E;
+    color: #F5EBDD;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0B1F35;
+}
+
+@media (max-width: 600px) {
+    .search-container form {
+        width: 100%;
+    }
+}
+
+
+
+
 ```
 
 
 
 ## OUTPUT
-<img width="1300" height="625" alt="Screenshot 2026-10-30 102946" src="https://github.com/user-attachments/assets/8990c724-12b0-4f48-86b5-a9ec7284f5e9" />
 
-
-<img width="1306" height="611" alt="Screenshot 2026-10-30 102128" src="https://github.com/user-attachments/assets/ccbbe5bc-4a9f-4103-bae7-a0c0551ead07" />
+<img width="1897" height="925" alt="image" src="https://github.com/user-attachments/assets/c39eb64d-1cd4-41df-a2ae-4cdf7ba75bdd" />
 
 
 
